@@ -1,21 +1,55 @@
 .home {
 
+  .welcomeSection{
+    .welcomeContainer{
+        margin: 2% 0 2% 0;
+        padding: 2% 0 2% 0;
+        border-bottom: 1px dashed @navigation-border;
+
+        .welcomeImg{
+          margin: 2% 0 2% 0;
+        }
+
+        .welcomeText{
+          margin: 2% 0 2% 0;
+        }
+    }
+  }
+
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
+    @media @mobile{
+      flex-direction: column;
+    }
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+        @media @mobile{
+          width: 100%;
+          padding-right: 0;
+          padding-left: 1%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
       img {
         border-radius: 10px;
@@ -27,20 +61,44 @@
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
+    @media @mobile{
+    flex-direction: column-reverse;
+  }
     .text-content {
       padding-left: 1%;
       padding-right: 0;
+
+      @media @mobile{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
 
     .img-content {
       padding-right: 1%;
       padding-left: 0;
+
+      @media @mobile{
+        width: 100%;
+        padding-right: 0;
+        padding-left: 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
     }
   }
 
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+
+    @media @mobile{
+      width: 100%;
+    }
 
     img {
       border-radius: 10px;
@@ -53,9 +111,121 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile{
+      width: 100%;
+      flex-direction: column;
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      
+      @media @mobile{
+        width: 100%;
+      }
+    }
+
+    .btn {
+      display: flex;
+      margin: 0 0 10% 2%;
+      height: 50%;
+
+      @media @mobile{
+        margin: 0 auto;
+        justify-content: center;
+      }
+      
+      button{
+        .generalText; //import text rules
+        .createButton(70%, 45%, 5px, 0, @button-bg, @white);
+
+        @media @mobile{
+          .createButton(90%, 45%, 5px, 0, @button-mobile-bg, @button-mobile-font-color);
+        }
+      }
     }
   }
+
+  #formContainer{
+    margin: 1% 0 1% 0;
+    padding: 1% 0 1% 0;
+    text-align: center;
+
+    #selection{
+      margin: 2% 0 2% 0;
+
+      select{
+        .generalText;
+        padding-bottom: 0;
+      }
+
+      select option{
+        .generalText;
+      }
+    }
+
+    #topForm{
+      display: flex;
+      justify-content: space-evenly;
+      margin: 1%;
+      padding: 1%;
+
+      @media @mobile{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #fieldOne, #fieldTwo{
+        width: 50%;
+
+        input{
+          .generalText;
+        }
+      }
+    }
+
+    #midForm{
+      #topForm;
+    }
+
+    #bottomForm{
+      display: flex;
+      flex-direction: column;
+
+      @media @mobile{
+        display: none;
+      }
+      
+      textarea{
+        .generalText;
+      }
+
+      input{
+         align-self: center;
+        .generalText;
+        .createButton(70%, 45%, 5px, 0, @button-bg, @white);
+      }
+    }
+
+    #bottomFormMobile{
+      display: none;
+
+      @media @mobile{
+        display: flex;
+        flex-direction: column;
+      }
+
+      textarea{
+        .generalText;
+      }
+
+      input{
+        align-self: center;
+        .generalText;
+        .createButton(90%, 45%, 5px, 0, @button-mobile-bg, @button-mobile-font-color);
+      }
+    }
+  }
+
 }// home
