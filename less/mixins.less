@@ -1,1 +1,16 @@
 // Mixins in here
+
+.generalText(){
+    line-height: 1.5;
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+  }
+
+.createButton(@width, @height, @b-radius, @p-bottom, @bg-color, @color){
+        width: @width;
+        height: @height;
+        border-radius: @b-radius;
+        padding-bottom: @p-bottom;
+        background-color: @bg-color;
+        color: @color;
+}
